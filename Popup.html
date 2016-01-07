@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+	<meta charset="UTF-8">
+	<title>Popup</title>
+	<link rel="stylesheet" type="text/css" href="css/resets.css">
+	<style>
+
+		@font-face {
+			font-family: "Impact";
+			src: url("fonts/impact_[allfont.ru].ttf");
+
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		@font-face {
+			font-family: "Ristretto Bold";
+			src: url("fonts/Ristretto_Pro/RistrettoPro-Bold.otf");
+
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		@font-face {
+			font-family: "Ristretto Medium";
+			src: url("fonts/Ristretto_Pro/RistrettoPro-Medium.otf");
+
+			font-style: normal;
+			font-weight: normal;
+		}
+
+
+
+		@font-face {
+			font-family: "Ristretto Light";
+			src: url("fonts/Ristretto_Pro/RistrettoPro-Light.otf");
+
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		* {  
+
+			-webkit-transition: all 2s ease;
+			-moz-transition: all 2s ease;
+			-o-transition: all 2s ease;
+		}
+
+		html {
+
+			height: 100%;
+			background: url(main_index_img/html_bg2.png);
+
+		}
+
+
+		html {height: 100%;}
+		body {
+			
+			margin: 0 auto;
+			width: 100%; 
+			max-width: 900px;
+			-webkit-box-shadow: 0px 3px 17px 5px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 3px 17px 5px rgba(0,0,0,0.75);
+			box-shadow: 0px 3px 17px 5px rgba(0,0,0,0.75);
+			background: url(main_index_img/body2_bg.png);
+			position: relative;
+			padding: 20px;
+			border: 1px solid #675e4d;
+		}
+
+		#body_container {
+			background: url(main_index_img/body_bg.png);
+			
+			width: 100%;
+			position: relative;
+			-webkit-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			-moz-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			padding: 10px;
+
+
+
+		}
+
+		#border_div {
+			border: 1px solid #dccea9;
+			height: 100%;
+			width: 100%;
+
+		}
+
+		#content {
+			max-width: 500px;
+			width: 100%;
+			position: relative;
+			margin: auto;
+		}
+		p {
+			font-size: 25px;
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			text-align: center;
+
+			
+			position: relative;
+			margin-top: 20px;
+			line-height: 20px;
+
+		}
+
+
+		.example1 {
+			margin-top: 50px;
+
+		}
+
+
+		.any_content1 {
+			font-size: 20px;
+			color: #635D5D;
+			font-family: 'Ristretto Light';
+			text-align: center;
+
+			
+			position: relative;
+			margin-top: 20px;
+			line-height: 20px;
+
+		}
+
+		#popup_box {
+			height: 200px;
+			width: 200px;
+			position: absolute;
+			background: #EAF7A0;
+			left: 0px;
+			display: none;
+			z-index: 2;
+			-webkit-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			-moz-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			padding: 10px;
+		}
+
+		.secr_popup {
+
+			font-size: 18px;
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			text-align: center;
+
+			
+			position: relative;
+			margin-top: 20px;
+			line-height: 20px;
+
+
+		}
+
+
+
+
+
+
+
+
+
+
+		.example2 {
+			margin-top: 80px;
+			text-align: center;
+		}
+
+
+		.descr2 { 
+
+			font-size: 20px;
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			text-align: center;
+
+			
+			position: relative;
+			margin-top: 20px;
+			line-height: 20px;
+			margin-bottom: 30px;
+
+
+		}
+
+
+		.popup_wrap {
+			margin-top: 30px;
+		}
+
+		#popup_box1 {
+			height: 200px;
+			width: 150px;
+			position: relative;
+			background: #EAF7A0;
+			left: -150px;
+			display: none;
+			z-index: 2;
+			-webkit-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			-moz-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			padding: 10px;
+
+			-webkit-transition: all 0.5s ease-out;
+			-moz-transition: all 0.5s ease-out;
+			-o-transition: all 0.5s ease-out;
+		}
+
+		#popup_box2 {
+			height: 200px;
+			width: 150px;
+			position: relative;
+			background: #9BE5EC;
+
+			display: none;
+			z-index: 2;
+			-webkit-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			-moz-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			padding: 10px;
+
+			-webkit-transition: all 0.5s ease-out;
+			-moz-transition: all 0.5s ease-out;
+			-o-transition: all 0.5s ease-out;
+			
+		}
+
+		#popup_box3 {
+			height: 200px;
+			width: 150px;
+			position: relative;
+			background: #D8A2E6;
+			left: 150px;
+			display: none;
+			z-index: 2;
+			-webkit-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			-moz-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			padding: 10px;
+			
+			-webkit-transition: all 0.5s ease-out;
+			-moz-transition: all 0.5s ease-out;
+			-o-transition: all 0.5s ease-out;
+			
+		}
+
+		a {
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			font-size: 20px;
+			position: absolute;
+			bottom: 0px;
+			left: -140px;
+		}
+
+
+
+
+		#nav {
+			margin-top: 30px;
+			width: 100px;
+			height: 30px;
+			background: #A7A172;
+			font-size: 20px;
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			padding-left: 5px;
+			line-height: 30px;
+			cursor: pointer;
+
+			-webkit-box-shadow: inset -4px -3px 0px -1px rgba(71,50,13,0.74);
+			-moz-box-shadow: inset -4px -3px 0px -1px rgba(71,50,13,0.74);
+			box-shadow: inset -4px -3px 0px -1px rgba(71,50,13,0.74);
+
+		}
+
+		#nav:hover {
+			background: #ECE2A0;
+		}
+
+		#nav span {
+			margin-left: 30px;
+		}
+
+		#section_panel {
+			width: 300px;
+			height: 200px;
+			display: none;
+			
+			
+			background: #C2926C;
+			transition: all 0.3s linear 0s;
+			-moz-transition: all 0.3s linear 0s;
+			-webkit-transition: all 0.3s linear 0s;
+
+			-webkit-box-shadow: inset -1px 0px 0px 2px rgba(71,50,13,0.74);
+			-moz-box-shadow: inset -1px 0px 0px 2px rgba(71,50,13,0.74);
+			box-shadow: inset -1px 0px 0px 2px rgba(71,50,13,0.74);
+			position: relative;
+
+
+		}
+
+
+		.block_wrap {
+			position: relative;
+			top: 10px;
+			left: 10px;
+		}
+
+
+
+		.panel_block {
+
+			width: 45%;
+			height: 40px;
+			background: #A7A172;
+			font-size: 20px;
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			padding-left: 5px;
+			line-height: 30px;
+			cursor: pointer;
+			display: inline-block;
+			padding-top: 5px;
+			overflow: hidden;
+			-webkit-box-shadow: inset -1px 0px 0px 2px rgba(71,50,13,0.74);
+			-moz-box-shadow: inset -1px 0px 0px 2px rgba(71,50,13,0.74);
+			box-shadow: inset -1px 0px 0px 2px rgba(71,50,13,0.74);
+
+
+		}
+
+		.panel_block:hover {
+			color: #F5EFC4;
+			text-decoration: underline;
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<div id="body_container">
+
+
+		
+		<div id="border_div">
+			<div id="content">
+				<!-- //ANY CONTENT -->
+				<!-- //ANY CONTENT -->
+				<!-- //ANY CONTENT -->
+				<!-- //ANY CONTENT -->
+				<p>
+					<br>
+					<br>
+					Собсвтенно все увиденное вами ниже чистый и самый "что ни на есть настоящий" JS
+				</p>
+
+
+				<div class="example1"> 
+
+					<div class="descr2">Воспроизведем модуль Popup.js<br>
+					</div>
+					<div class="any_content1">
+						Any content <br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, minus nemo ex sequi veniam neque, autem quo soluta optio laudantium? Dolores delectus animi fugit molestias minima aliquam, ea magnam dolore.		
+
+					</div>
+
+					<button onclick="document.getElementById ('popup_box').style.display='block'">Push ME!</button>
+					<div id="popup_box">
+
+						<p> POPUP ANY INFORM <br>
+							<br>
+							<br>
+
+
+						</p>
+
+						<div class="secr_popup">
+
+							Вот она и появилась.<br>
+							А теперь уведите мышкой в сторонку
+							и кликните
+
+
+
+						</div>
+
+
+
+					</div>
+
+
+
+					<div class="any_content1">
+						And yet any Text <br>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, minus nemo ex sequi veniam neque, autem quo soluta optio laudantium? Dolores delectus animi fugit molestias minima aliquam, ea magnam dolore.		
+
+					</div>
+
+				</div>
+
+
+				<div class="example2">
+
+					<div class="descr2">Что ж а теперь усложним задачу.<br>
+						Возьмем теперь Массив элементов</div>
+
+
+
+
+						<button onclick="document.getElementById ('popup_box1').style.display='inline-block'">Push ME first!</button>
+						<button onclick="document.getElementById ('popup_box2').style.display='inline-block'">Push ME next!</button>
+						<button onclick="document.getElementById ('popup_box3').style.display='inline-block'">Push ME last!</button>
+
+						<div class="popup_wrap">
+							<div id="popup_box1">
+
+								<p> POPUP 1 <br>
+									<br>
+									<br>
+
+
+								</p>				
+
+							</div>
+
+
+
+							<div id="popup_box2">
+
+								<p> POPUP 2 <br>
+									<br>
+									<br>
+
+
+								</p>
+							</div>
+
+
+							<div id="popup_box3">
+
+								<p> POPUP 3 <br>
+									<br>
+									<br>
+
+
+								</p>
+
+							</div>
+						</div>
+
+
+
+
+
+
+
+					</div>
+
+					<br>
+					<br>
+					<br>
+					<br>
+
+
+
+					<p>This is menuToggle.js function</p>
+					<div onclick="toggleNavBar()" id="nav">AnyNav  <span id="nav_arrow" >&#9662</span> </div>
+					<div  id="section_panel">
+
+						<div class="block_wrap">
+							<div class="panel_block">Anythink1</div>
+							<div class="panel_block">Anythink2</div>
+							<div class="panel_block">Anythink3</div>
+							<div class="panel_block">Anythink4</div>
+							<div class="panel_block">Anythink5</div>
+							<div class="panel_block">Anythink6</div>
+							<div class="panel_block">Anythink7</div>
+							<div class="panel_block">Anythink8</div>
+						</div>
+					</div>
+
+
+
+					<br>
+					<br>
+					<br>
+					<br>
+
+					<a href="loftblog.html">Next</a>
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+
+			<script>
+			//простой Попап
+			window.addEventListener('mouseup', function(event) {
+				var popup = document.getElementById('popup_box');
+				if (event.target != popup && event.target.parentNode != popup ) {
+
+					popup.style.display = 'none';
+
+
+
+				};
+
+
+			})
+
+
+		</script>
+
+
+
+		<script>
+
+			//массив Попап
+			var popupArray = ['popup_box1','popup_box2', 'popup_box3']
+
+			window.addEventListener('mouseup', function(event) {
+
+
+				for (var i=0; i < popupArray.length; i++) {
+
+					var popup = document.getElementById(popupArray[i]);
+					if (event.target != popup && event.target.parentNode != popup ) {
+
+						popup.style.display = 'none';
+					}
+
+
+
+
+
+
+
+				};
+
+
+			})
+
+
+
+		</script>
+
+
+		<script> 
+
+			var panel = document.getElementById('section_panel');
+			var navarrow = document.getElementById('nav_arrow');
+			var show = 'block';
+			console.log(panel.style.height);
+
+
+			function toggleNavBar () {
+
+
+				var panel = document.getElementById('section_panel');
+				var navarrow = document.getElementById('nav_arrow');
+				var show = 'block';
+
+
+				if (panel.style.display == show) {
+					panel.style.display = 'none';
+					navarrow.innerHTML = "&#9662";
+				} else {
+					panel.style.display = show;
+					navarrow.innerHTML = "&#9652";
+				}
+			}
+
+
+		</script>
+
+
+
+
+	</body>
+	</html>

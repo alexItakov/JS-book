@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+	<meta charset="UTF-8">
+	<title>TextSlideShow</title>
+	<link rel="stylesheet" type="text/css" href="css/resets.css">
+	<style>
+
+		@font-face {
+			font-family: "Impact";
+			src: url("fonts/impact_[allfont.ru].ttf");
+
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		@font-face {
+			font-family: "Ristretto Bold";
+			src: url("fonts/Ristretto_Pro/RistrettoPro-Bold.otf");
+
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		@font-face {
+			font-family: "Ristretto Medium";
+			src: url("fonts/Ristretto_Pro/RistrettoPro-Medium.otf");
+
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		html {
+
+			height: 100%;
+			background: url(main_index_img/html_bg2.png);
+
+		}
+
+
+		html {height: 100%;}
+		body {
+			height: 100%;
+			margin: 0 auto;
+			width: 100%; 
+			max-width: 900px;
+			-webkit-box-shadow: 0px 3px 17px 5px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 3px 17px 5px rgba(0,0,0,0.75);
+			box-shadow: 0px 3px 17px 5px rgba(0,0,0,0.75);
+			background: url(main_index_img/body2_bg.png);
+			position: relative;
+			padding: 20px;
+			border: 1px solid #675e4d;
+		}
+
+		#body_container {
+			background: url(main_index_img/body_bg.png);
+			height: 100%;
+			width: 100%;
+			position: relative;
+			-webkit-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			-moz-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			padding: 10px;
+
+
+
+		}
+
+		#border_div {
+			border: 1px solid #dccea9;
+			height: 100%;
+			width: 100%;
+
+		}
+
+		#content {
+			max-width: 500px;
+			width: 100%;
+			position: relative;
+			margin: auto;
+		}
+		p {
+			font-size: 20px;
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			text-align: center;
+
+			
+			position: relative;
+			margin-top: 20px;
+			line-height: 20px;
+			margin-bottom: 20px;
+
+		}
+
+		h1 {
+			font-size: 30px;
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			text-align: center;
+
+			
+			position: relative;
+			margin-top: 20px;
+			line-height: 20px;
+			margin-bottom: 20px;
+
+		}
+
+		#wss {
+			opacity: 0;
+			-webkit-transition: opacity 1.0s linear 0s;
+			-moz-transition: opacity 1.0s linear 0s;
+			transition: opacity 1.0s linear 0s;
+
+		}
+
+		#wss{
+			opacity:0;
+			-webkit-transition:opacity 1.0s linear 0s;
+			transition:opacity 1.0s linear 0s;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div id="body_container">
+
+
+		
+		<div id="border_div">
+			<div id="content">
+				<!-- //ANY CONTENT -->
+				<!-- //ANY CONTENT -->
+				<!-- //ANY CONTENT -->
+				<!-- //ANY CONTENT -->
+
+
+				<p>Тест слайдшоу</p>
+
+				<h1>My dog is <span id="wss"></span></h1>
+
+				<h1>Иногда Думаю О <span id="wss" ></span>
+
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					FUCK NOT WORK!!!
+
+
+				</h1>
+				<script >
+					wss_elem = document.getElementById("wss");
+					wssSlide();
+
+				</script>
+				<script>wss_elem = document.getElementById("wss"); wssSlide(); </script>
+
+
+
+
+
+
+			</div>
+		</div>
+	</div>
+
+	<script> 
+		var slide_i = 0
+		var slide_array = ["жизни", "коте", "Двух Котах!", "даже и Собаке"];
+		var slide_elem;
+
+		function slideNext () {
+			slide_i++;
+			slide_elem.style.opacity = 0;
+			if (slide_i > (slide_array.length - 1)) {
+				slide_i = 0;
+			}
+			setTimeout('slideSlide()',1000);
+
+
+		}
+
+		function slideSlide() {
+			slide_elem.innerHTML = slide_array[slide_i];
+			slide_elem.style.opacity = 1;
+			setTimeout('slideNext()',3000);
+
+		}
+
+	</script>
+
+
+
+	<script>
+		var wss_i = 0;
+		var wss_array = ["Cute","Happy","<u>Playful</u>","Smart","Loyal"];
+		var wss_elem;
+		function wssNext(){
+			wss_i++;
+			wss_elem.style.opacity = 0;
+			if(wss_i > (wss_array.length - 1)){
+				wss_i = 0;
+			}
+			setTimeout('wssSlide()',1000);
+		}
+		function wssSlide(){
+			wss_elem.innerHTML = wss_array[wss_i];
+			wss_elem.style.opacity = 1;
+			setTimeout('wssNext()',2000);
+		}
+	</script>
+
+
+
+
+</body>
+</html>

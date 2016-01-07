@@ -1,0 +1,489 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transition JS</title>
+	<link rel="stylesheet" type="text/css" href="css/resets.css">
+	<style>
+
+		@font-face {
+			font-family: "Impact";
+			src: url("fonts/impact_[allfont.ru].ttf");
+
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		@font-face {
+			font-family: "Ristretto Bold";
+			src: url("fonts/Ristretto_Pro/RistrettoPro-Bold.otf");
+
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		@font-face {
+			font-family: "Ristretto Medium";
+			src: url("fonts/Ristretto_Pro/RistrettoPro-Medium.otf");
+
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		html {
+
+			height: 100%;
+			background: url(main_index_img/html_bg2.png);
+
+		}
+
+
+		html {height: 100%;}
+		body {
+			
+			margin: 0 auto;
+			width: 100%; 
+			max-width: 900px;
+			-webkit-box-shadow: 0px 3px 17px 5px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 3px 17px 5px rgba(0,0,0,0.75);
+			box-shadow: 0px 3px 17px 5px rgba(0,0,0,0.75);
+			background: url(main_index_img/body2_bg.png);
+			position: relative;
+			padding: 20px;
+			border: 1px solid #675e4d;
+			overflow-x: hidden; 
+		}
+
+		#body_container {
+			background: url(main_index_img/body_bg.png);
+			
+			width: 100%;
+			position: relative;
+			-webkit-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			-moz-box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			box-shadow: 0px 2px 5px 3px rgba(56,46,34,1);
+			padding: 10px;
+
+
+
+		}
+
+		#border_div {
+			border: 1px solid #dccea9;
+			height: 100%;
+			width: 100%;
+
+		}
+
+		#content {
+			max-width: 500px;
+			width: 100%;
+			position: relative;
+			margin: auto;
+		}
+
+
+		p {
+			font-size: 20px;
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			text-align: center;
+
+			
+			position: relative;
+			margin-top: 20px;
+			line-height: 20px;
+
+		}
+
+		a {
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			font-size: 20px;
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+		}
+
+		.left_block {
+			display: inline-block;
+			width: 49%;
+			vertical-align: top;
+		}
+		.right_block {
+			display: inline-block;
+			width: 49%;
+			vertical-align: top;
+		}
+
+
+
+
+
+		/*example1*/
+
+
+		.example1 {
+			margin-top: 50px;
+
+
+		}
+
+		#box1 {
+			width: 200px;
+			height: 150px;
+			background: #C6EEF3;
+			text-align: center;
+			vertical-align: middle;
+			color: #676464;
+			font-size: 20px;
+		}
+
+		#box1 p {
+			top: 40%;
+			position: relative;
+		}
+
+		/*example1*/
+
+
+		/*example2*/
+		.example2 {
+			text-align: right;
+
+
+
+		}
+
+		#box2 {
+			width: 200px;
+			height: 150px;
+			background: #C6EEF3;
+			text-align: center;
+			vertical-align: middle;
+			color: #676464;
+			font-size: 20px;
+			position: relative;
+			left: 40%;
+			
+		}
+
+		#box2 p {
+			top: 40%;
+			position: relative;
+		}
+
+		.descr1 { 
+
+			font-size: 20px;
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			text-align: center;
+
+			
+			position: relative;
+			margin-top: 20px;
+			line-height: 20px;
+			text-align: left;
+		}
+
+		/*example2*/
+
+
+
+
+		/*example3*/
+		.example2 {
+			text-align: right;
+
+
+
+		}
+
+		#box3 {
+			width: 200px;
+			height: 150px;
+			background: #C6EEF3;
+			text-align: center;
+			vertical-align: middle;
+			color: #676464;
+			font-size: 20px;
+			position: relative;
+			left: 0%;
+			overflow: hidden;
+			
+		}
+
+		#box3 p {
+			top: 40%;
+			position: relative;
+		}
+
+		.descr3 { 
+
+			font-size: 20px;
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			text-align: center;
+
+			
+			position: relative;
+			margin-top: 20px;
+			line-height: 20px;
+			text-align: left;
+		}
+
+		/*example3*/
+
+
+
+
+
+
+
+		/*example4*/
+		.example4 {
+			text-align: right;
+
+
+
+		}
+
+		#box4 {
+			width: 200px;
+			height: 150px;
+			background: #C6EEF3;
+			text-align: center;
+			vertical-align: middle;
+			color: #676464;
+			font-size: 20px;
+			position: relative;
+			left: 400%;
+			overflow: hidden;
+			
+		}
+
+		#box4 p {
+			top: 40%;
+			position: relative;
+		}
+
+		.descr3 { 
+
+			font-size: 20px;
+			color: #635D5D;
+			font-family: 'Ristretto Medium';
+			text-align: center;
+
+			
+			position: relative;
+			margin-top: 20px;
+			line-height: 20px;
+			text-align: left;
+		}
+
+		/*example4*/
+
+
+
+
+
+	</style>
+
+</head>
+
+<div id="body_container">
+
+
+
+	<div id="border_div">
+
+		<div id="content">
+
+
+			<p>Здесь вы найдете и увидите много чего интересного<br>
+				не проходите мимо собственного говоря.
+				<br>
+				<br>
+				Собсвтенно все увиденное вами ниже чистый и самый "что ни на есть настоящий" JS
+			</p>
+
+
+
+
+			<div class="example1">
+				<div class="left_block">
+					<div id="box1"><p>Content box</p></div>
+					<button onclick="changeBG('box1','#6F85F5');">Facebook color</button>
+					<button onclick="changeBG('box1','#C6EEF3');">Again Blue</button>
+				</div>
+
+
+				<div class="right_block">
+					<div class="descr1">
+						Вот понажмайnt по кнопочкам и увидите  что произойдет
+					</div>
+				</div>		
+
+			</div>
+
+			<div class="example2">
+
+				<div class="left_block">
+
+					<div class="descr1">
+						Коробочка исчезни!
+					</div>
+				</div>
+				<div class="right_block">
+					<div id="box2"><p>Content box</p></div>
+					<button onclick="fadeOut('box2');">Fade Out</button>
+					<button onclick="fadeIn('box2');">Fade In</button>
+
+				</div>
+
+			</div>
+
+
+
+			<div class="example3">
+				<div class="left_block">
+					<div id="box3"><p>Content box</p></div>
+					<button onclick="slideDown('box3','#6F85F5');">slideDown</button>
+					<button onclick="slideUp('box3','#C6EEF3');">slideUp</button>
+				</div>
+
+
+				<div class="right_block">
+					<div class="descr1">
+						И еще один велосипед
+						
+					</div>
+				</div>		
+
+			</div>
+
+
+			<div class="example4">
+
+				<div class="left_block"> <div class="descr1">
+					Акцио Блок!
+				</div>
+			</div>
+			<div class="right_block">
+				<div id="box4"><p>Content box</p></div>
+				<button onclick="slideLeftIn('box4');">Actio Block!</button>
+				<button onclick="slideLeftOut('box4');"> ReturnOut </button>
+
+			</div>
+
+		</div>
+
+
+		<a href="Popup.html">Next</a>
+
+
+
+
+
+
+
+
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script> 
+//изменение цвета элемента по нажатию кнопки
+function changeBG(el,clr) {
+	var elem = document.getElementById(el);
+	elem.style.transition = "background 1.0s linear 0s";
+	elem.style.background = clr;
+	// body...
+}
+
+
+
+
+
+//Появление исчезновение
+
+function fadeOut(el,clr) {
+	var elem = document.getElementById(el);
+	elem.style.transition = "opacity 1.0s linear 0s";
+	elem.style.opacity = 0;
+	
+}
+function fadeIn(el,clr) {
+	var elem = document.getElementById(el);
+	elem.style.transition = "opacity 1.0s linear 0s";
+	elem.style.opacity = 1;
+
+}
+
+
+//Появление исчезновение
+
+
+
+
+//Слайд Вниз/Вверх
+
+
+function slideUp(el,clr) {
+	var elem = document.getElementById(el);
+	elem.style.transition = "height 0.5s linear 0s";
+	elem.style.height = '150px';
+	
+}
+
+function slideDown(el,clr) {
+	var elem = document.getElementById(el);
+	elem.style.transition = "height 0.5s linear 0s";
+	elem.style.height = "0px";
+	
+}
+
+
+//Слайд Вниз/Вверх
+
+
+
+
+
+//Слайд появление слева 
+
+function slideLeftIn(el,clr) {
+	var elem = document.getElementById(el);
+	elem.style.transition = "left 2s ease-out 0s";
+	elem.style.left = "40%";
+	
+}
+
+function slideLeftOut(el,clr) {
+	var elem = document.getElementById(el);
+	elem.style.transition = "left 2s ease-in 0s";
+	elem.style.left = "400%";
+	
+}
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
